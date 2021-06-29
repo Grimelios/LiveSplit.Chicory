@@ -1,0 +1,104 @@
+﻿{
+    "Game":
+    {
+		"Name": "Chicory: A Colorful Tale",
+        "Short": "Chicory"
+    },
+
+	"Process": "Chicory.exe",
+	"Memory": {
+        "chapter": "",
+        "decor": "",
+		"kids": "",
+        "litter": "",
+        "powers": ""
+	},
+
+	"Splits": [
+		{
+			"Name": "Brush Power",
+            "Description": "Brush power acquired. Triggers on interaction with the brush.",
+            "Field": {
+                "Key": "power",
+                "Type": "Dropdown",
+                "Prompt": "Power",
+                "Entries": [
+                    "Climb",
+                    "Jump",
+                    "Light",
+                    "Swim",
+                    "Waterfalls"
+                ]
+            }
+		},
+		{
+			"Name": "Chapter",
+			"Description": "Chapter reached. Triggers when the chapter screen appears.",
+			"Fields": [
+				{
+					"Key": "chapter",
+					"Type": "Dropdown",
+					"Prompt": "Chapter",
+					"Entries": [
+						"1. The Dark Forest",
+						"2. A Wielder's Duty",
+						"3. Portraits of Chicory",
+						"4. Into the Depths",
+						"5. The Source",
+						"6. The Wielder Trials I",
+						"7. The Wielder Trials II",
+						"8. The Wielder Trials III",
+						"9. The Wielder Trials IV",
+						"10. The Brush"
+					]
+				}
+			],
+
+			"Condition": "chapter == value"
+		},
+		{
+            "Name": "Decor",
+            "Description": "Number of decorations purchased. Triggers when the announcement window appears.",
+            "Type": "Integer comparison",
+            "Memory": "decor"
+		},
+		{
+            "Name": "Gifts",
+            "Description": "Number of gifts opened. Triggers on pickup.",
+            "Fields": "int gifts [condition]",
+            "Condition": "gifts [condition] value"
+		},
+		{
+			"Name": "Litter",
+            "Description": "Pieces of litter collected. Triggers on pickup.",
+            "Fields": [
+	            {
+                    "Key": "litter",
+                    "Prompt": "Count",
+                    "Type": "Integer"
+	            },
+	            {
+                    "Type": "Comparison"
+	            }
+            ],
+
+            "Condition": "litter [comparison] value"
+		},
+	    {
+		    "Name": "Lost Kids",
+            "Description": "Number of lost kids found. Triggers on pickup.",
+		    "Fields": [
+			    {
+					"Key": "kids",
+                    "Prompt": "Count",
+                    "Type": "Integer"
+				},
+                {
+                    "Type": "Comparison"
+                }
+		    ],
+
+            "Condition": "kids [comparison] value"
+	    }
+	]
+}

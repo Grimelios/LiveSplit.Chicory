@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<updates>
+	<update version="1.0.0">
+		<files>
+			<file path="Components/LiveSplit.Chicory.dll" status="changed" />
+		</files>
+	</update>
+</updates>
